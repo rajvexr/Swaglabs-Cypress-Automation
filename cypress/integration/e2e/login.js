@@ -1,5 +1,5 @@
 // Cypress Mocha Framework
-import data from '../../fixtures/testData.json'
+import validUser from '../../fixtures/validUser.json'
 import invalidUser from '../../fixtures/invalidUser.json'
 import loginPage from '../POM/loginPage'
 
@@ -8,7 +8,7 @@ describe('template spec', () => {
 
   beforeEach (() => {
 
-    cy.fixture('testData.json').as('data')
+    cy.fixture('validUser.json').as('validUser')
     cy.fixture('invalidUser.json').as('invalidUser')
     cy.visit('https://www.saucedemo.com/')
     cy.url().should('include', 'sauce')
@@ -17,7 +17,7 @@ describe('template spec', () => {
 
   it('Positive Login', () => {
     
-    cy.userLogin(data.username[0], data.password)
+    cy.userLogin(validUser.username[0], validUser.password)
     cy.url().should('include', 'inventory')
 
   })

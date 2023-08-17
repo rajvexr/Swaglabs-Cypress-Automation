@@ -19,7 +19,7 @@ module.exports = defineConfig({
 
   e2e: {
     setupNodeEvents,
-    specPattern: 'cypress/integration/e2e/*js',
+    specPattern: 'cypress/integration/BDD/*.feature',
     screenshotsFolder: 'cypress/failure/screenshots',
     baseUrl: 'https://www.saucedemo.com/',
   },
